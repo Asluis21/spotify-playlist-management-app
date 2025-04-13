@@ -1,1 +1,192 @@
-/* You can add global styles to this file, and also import other style files */
+/* Variables */
+:root {
+    --dark-grey: #121212;
+    --grey-hover: #c7c7c7;
+    --black-hover: #121212;
+    --green: #1db954;
+    --red: #b60000;
+}
+
+
+html, body{
+    height: 100%;
+    background-color: #000 ;
+    color: #fff;
+}
+
+/* LINK STYLE */
+a{
+    color: white;
+}
+a:hover{
+    color: white;
+}
+
+/* Scrollbar styling */
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+    background: #555;
+} 
+
+/* End scrollbar styling*/
+
+/* No points in lists as a decoration */
+li{
+    list-style: none;
+}
+
+/* Btn will have a flex display to align icones easly */
+.btn{
+    padding: 10px;
+    color: white;
+    border: none;
+    display: inline;
+    border-radius: 50px;
+}
+
+.btn:hover{
+    background: var(--dark-grey);
+    transition: .3s;
+}
+
+.btn svg{
+    display: block;
+    width: 100%;
+}
+
+
+/* Buttons will have a grey background in hover style*/
+.custom-button:hover{
+    background: var(--dark-grey);
+    transition: .3s;
+}
+
+/* Styles for a red button */
+.btn-red{
+    background-color: var(--dark-grey);
+    border-radius: 50px;
+    color: white;
+}
+
+.btn-red:hover{
+    background-color: var(--dark-grey);
+    color: var(--red);
+}
+
+/* Styles for a green button */
+.btn-green:hover{
+    color: #fff;
+}
+
+.btn-green{
+    background-color: var(--green);
+    color: #000;
+}
+
+/* Style for a button in a disabled mode */
+.btn:disabled{
+    border-color: revert;
+}
+
+/* Styles to the image */
+.edit-img {
+    position: relative;
+    display: inline-block;
+    z-index:10;
+}
+
+/* Styles of the image */
+.edit-img img {
+    transition: filter 0.3s ease;
+    border-radius: 20%;
+    z-index: 10;
+    position: relative;
+}
+
+.edit-img:hover{
+    filter: brightness(0.7);  /* Make it a bit darker */
+}
+
+.edit-img img:hover {
+    z-index: -10; /* Send the image to the back */
+}
+
+
+/* Styles on the SVG that works as an icon */
+.edit-img .edit-img-icon {
+    width: 100%;
+    display: flex;
+    height: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transition: opacity 0.3s ease;
+    align-items: center;
+    justify-content: center;
+    
+
+}
+
+/* In hover state the icon will be above the image */
+.edit-img .edit-img-icon:hover{
+    z-index: 20; 
+}
+
+
+/* The icon initially will be behind the image */
+.edit-img svg{
+    z-index:-10
+}
+
+/* Carrousel buttons */
+
+.owl-carousel .owl-stage-outer {
+    position: relative;
+    padding-top: 10px;
+}
+
+.owl-theme .owl-nav {
+    margin-top: 0px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: -37px;
+    right: 0px;
+}
+
+.owl-theme .owl-nav [class*=owl-] {
+    height: 40px;
+    width: 40px;
+    color: #FFF;
+    padding: 5px;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    border-radius: 50%;
+    background: inherit;
+    border: none;
+}
+
+.owl-theme .owl-nav [class*=owl-]:hover {
+    background: var(--dark-grey);
+    color: #FFF;
+    transition: .3s;
+}

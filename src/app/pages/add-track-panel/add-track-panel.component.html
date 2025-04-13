@@ -1,0 +1,50 @@
+<div class="add-track-panel d-flex flex-column gap-4 mb-5">
+
+  <div>
+    <button (click)="goBack()" class="custom-button rounded-5">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+      </svg>
+    </button>
+  </div>
+
+  <div class="track-info text-center">
+
+    <!-- <h4 class="text-center">Add Track to Playlists</h4> -->
+
+    <div class="track-info-image">
+      <img class="track-info-image-img" src="{{track?.images[0]?.url}}" alt="track image">
+    </div>
+
+    <div class="track-info-details w-100 d-flex justify-content-center">
+      <div class="d-flex track-info-details-name-artist">
+        <div class="d-flex flex-column">
+          <h6 class="track-text track-name" title="{{track?.name}}"><strong>{{track?.name}}</strong></h6>
+          <p class=" track-text track-artist m-0" title="{{track?.artist}}">{{track?.artist}}</p>    
+          <p class="track-text m-0" title="{{track?.album}}">{{track?.album}}</p>
+        </div>
+      </div>  
+    </div>
+  
+  </div>
+    
+    
+    <ul class="list-group">
+        @for(playlist of playlists; track playlist){
+          
+          <div class="track-panel-item position-relative">
+            
+            <input 
+              class="custom-checkbox"
+              type="checkbox"
+              [checked]="selectedPlaylists.has(playlist.id)"
+              (change)="togglePlaylistSelection(playlist.id)"
+            />
+
+            <app-playlist-detail [playlist]=playlist/>
+          </div>
+        }
+    </ul>
+
+    <button [disabled]="newSelectedPlaylists.size == 0"  class="btn btn-green position-absolute btn-add-track" (click)="addTrackToSelectedPlaylists()">Add Track</button>
+</div>

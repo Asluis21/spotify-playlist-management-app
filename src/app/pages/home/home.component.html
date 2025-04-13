@@ -1,0 +1,21 @@
+<div class="d-flex flex-column container-fluid p-3 h-100">
+ 
+    <app-navbar></app-navbar>
+
+    <div class="main-content row rounded h-100 justify-content-center overflow-hidden p-2 flex-grow-1">
+            
+        <div class="col-12 d-flex gap-3 flex-column flex-sm-row h-100 justify-content-sm-center">
+            
+            <!-- SPOTIFY PANEL -->
+            <!-- <div class="item-playlist col-sm-4 p-4 bg-black rounded-5 overflow-auto">
+                <app-playlist-section></app-playlist-section>
+            </div> -->
+            
+            <div class="item-playlist col-12 p-4 bg-black rounded-5 overflow-auto">
+                <router-outlet></router-outlet>
+                <!-- <app-search-section></app-search-section> -->
+            </div>
+        </div>
+    </div>
+</div>
+

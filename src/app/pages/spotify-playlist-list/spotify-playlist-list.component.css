@@ -1,0 +1,52 @@
+
+
+@media (min-width: 575px) {
+    
+    .title{
+        cursor: default;
+    }
+
+    .list-playlists{
+        display: block;
+    }
+
+}
+
+.custom-button{
+    background-color: inherit;
+    color: white;
+    border: none;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    height: 45px;
+    width: 45px;
+}
+
+.custom-button:hover{
+    background: var(--dark-grey);
+    /* opacity: 1; */
+    transition: .3s;
+}
+
+.custom-button-trash:hover{
+    background: #b60000;
+    /* opacity: 1; */
+    transition: .3s;
+}
+
+.btn-green{
+    background-color: var(--green);
+    border-radius: 50px;
+}
+
+/* .container-spotify-items{
+    flex: 1; 
+    height: 100%
+}
+
+
+.list-playlists{
+    flex-grow: 1; 
+    overflow-y: auto;
+} */

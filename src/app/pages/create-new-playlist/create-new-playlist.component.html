@@ -1,0 +1,64 @@
+<div class="container main-container h-100">
+  
+  <div>
+    <button (click)="goBack()" class="custom-button rounded-5">
+      <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-left" viewBox="0 0 16 16">
+          <path fill-rule="evenodd" d="M15 8a.5.5 0 0 0-.5-.5H2.707l3.147-3.146a.5.5 0 1 0-.708-.708l-4 4a.5.5 0 0 0 0 .708l4 4a.5.5 0 0 0 .708-.708L2.707 8.5H14.5A.5.5 0 0 0 15 8"/>
+      </svg>
+    </button>
+  </div>
+
+
+  <div class="d-flex flex-column gap-2 align-items-center">
+    @if(playlist){
+      <div class="edit-img">
+        <img height="85" width="85" src="{{playlist?.images[playlist.images.length - 1]?.url}}" alt="playlist image">
+        
+        <button class="edit-img-icon" (click)="triggerFileInput()">
+          <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-pencil-square icon-edit" viewBox="0 0 16 16">
+            <path d="M15.502 1.94a.5.5 0 0 1 0 .706L14.459 3.69l-2-2L13.502.646a.5.5 0 0 1 .707 0l1.293 1.293zm-1.75 2.456-2-2L4.939 9.21a.5.5 0 0 0-.121.196l-.805 2.414a.25.25 0 0 0 .316.316l2.414-.805a.5.5 0 0 0 .196-.12l6.813-6.814z"/>
+            <path fill-rule="evenodd" d="M1 13.5A1.5 1.5 0 0 0 2.5 15h11a1.5 1.5 0 0 0 1.5-1.5v-6a.5.5 0 0 0-1 0v6a.5.5 0 0 1-.5.5h-11a.5.5 0 0 1-.5-.5v-11a.5.5 0 0 1 .5-.5H9a.5.5 0 0 0 0-1H2.5A1.5 1.5 0 0 0 1 2.5z"/>
+          </svg>
+
+          <input #fileInput type="file" accept="image/*" (change)="onImageSelected($event)" hidden>
+        </button>
+      </div>
+  
+      <h3>{{playlist.name}}</h3>    
+    }@else{
+      <h3>Create New Playlist</h3>
+    }
+  </div>
+  
+
+  <form [formGroup]="playlistForm" (ngSubmit)="submitPlaylist()">
+    <div class="form-group">
+
+      <label for="name">Playlist Name</label>
+      <input type="text" id="name" formControlName="name" class="search-bar form-control form-control-name" placeholder="Enter playlist name">
+      @if (playlistForm.get('name').invalid && playlistForm.get('name').touched) {
+          <small class="text-danger">Playlist name is required.</small>
+      }
+    </div>
+
+    <div class="form-group">
+      <label for="description">Description</label>
+      <textarea id="description" formControlName="description" class="search-bar form-control" placeholder="Enter playlist description"></textarea>
+    </div>
+    
+    
+    @if(playlist){
+      <small class="text-muted">*The changes can take some time</small>
+      
+      <div class="form-group">
+        <button type="submit" class="btn btn-green my-3" [disabled]="playlistForm.invalid">Edit Playlist</button>
+      </div>
+    }@else{
+
+      <div class="form-group">
+        <button type="submit" class="btn btn-green my-3" [disabled]="playlistForm.invalid">Create Playlist</button>
+      </div>
+    }
+
+  </form>
+</div>

@@ -1,0 +1,23 @@
+nav{
+    background-color: var(--dark-grey);
+}
+
+.img-profile{
+    height: 26px;
+}
+
+ul{
+    background-color: black;
+}
+
+ul li a{
+    color: white;
+}
+
+a{
+    color: white;
+}
+
+ul a:hover{
+    background-color: var(--dark-grey);
+}

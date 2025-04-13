@@ -1,0 +1,19 @@
+<nav class="row mb-2 rounded">
+    <div class="d-flex justify-content-between p-2">
+        <div>{{spotifyProfile?.username}}</div>
+        
+        <a [routerLink]="['/home']" class="navbar-brand d-flex align-items-center gap-1">
+            <img src="../../../assets/img/Spotify_Icon_RGB_White.png" height="25px"/>
+        </a>
+        
+        <div role="button" class="dropdown">
+            <a href="javascript:void(0)" class="dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                <img class="img-profile rounded-circle" src="{{spotifyProfile.images?.[spotifyProfile.images.length-1]?.url}}" alt="spotify profile photo">
+            </a> 
+            <ul class="dropdown-menu">
+                <li><a href="#" (click)="logout()" class="dropdown-item">Log out</a></li>
+            </ul>
+        </div>
+        
+    </div>
+</nav>

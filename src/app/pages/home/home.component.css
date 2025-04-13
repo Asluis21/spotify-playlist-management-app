@@ -1,0 +1,36 @@
+*{
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+.main-content {
+    background-color: var(--dark-grey);
+}
+
+.item-playlist{
+    max-height: 100%;
+}
+
+/* 
+.item-playlist{
+    flex: 1;
+} */
+
+/* 
+@media (min-width: 575px) {
+    .item-playlist{
+        max-height: 100%;
+    }
+} */
+
+/* scroll */
+.scrollable-text{
+    overflow: auto;
+    direction: rtl;
+    width: max-content;
+}
+
+.icon-search{
+    cursor: pointer;
+}

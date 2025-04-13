@@ -1,0 +1,17 @@
+.track-detail{
+    
+    min-height: 60px;
+    background-color: #000;
+    color: #fff;
+    transition: transform 0.3s ease;
+
+    
+}
+
+.track-detail:hover{
+    background: var(--dark-grey); 
+    color: var(--grey-hover);
+    transform: translate3d(0, -.125rem, 0);
+    cursor: pointer;
+}
+

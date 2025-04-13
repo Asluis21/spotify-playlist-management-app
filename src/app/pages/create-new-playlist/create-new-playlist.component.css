@@ -1,0 +1,29 @@
+.search-bar{
+    border-radius: 25px;
+    background: var(--dark-grey);
+    color: white;
+    border: none;
+}
+
+.form-group{
+    margin-bottom: 20px;
+}
+
+.main-container{
+    max-width: 70%;
+    align-items: center;
+}
+
+.form-control-name{
+    height: 50px;
+}
+
+textarea{
+    height: 100px;
+}
+
+.edit-img-icon{
+    background: none;
+    border: none;
+    color: white;
+}

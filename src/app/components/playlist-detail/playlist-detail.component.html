@@ -1,0 +1,13 @@
+<div class="playlist-detail-container">
+    <div class="item-img">
+        @if (playlist.images.length == 0) { <span>No image</span> }
+        @else {<img class="img-item" src="{{ playlist.images[playlist.images.length-1]?.url}}" alt="image item"> }
+    </div>
+    
+    <div class="item-name d-flex flex-column">
+        <h6>{{playlist.name}}</h6> 
+        <p>{{playlist.owner.name}}</p>
+    </div>
+</div>
+
+

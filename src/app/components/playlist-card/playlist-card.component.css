@@ -1,0 +1,56 @@
+.playlist-card{
+    padding-top: 15px;
+    /* padding-bottom: 18px; */
+    border-radius: 10px;
+    width: 120px;
+    height: 210px;
+    text-align:left;
+    border: none;
+    background-color: inherit;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: center; */
+    align-items: center;
+    transition: transform 0.3s ease;
+
+}
+
+.playlist-card-content{
+    max-width: 92px;
+}
+
+.playlist-card .playlist-card-content p{
+    font-size: 12px;
+}
+
+.playlist-card .playlist-name,
+.playlist-card .playlist-owner {
+    color: white;
+    display: -webkit-box;
+    -webkit-line-clamp: 2; /* Limit to 2 lines */
+    line-clamp: 2; /* Limit to 2 lines */
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 100%; /* Adjust as needed */
+    margin: 0;
+}
+
+.playlist-card:hover {
+    /* Slightly enlarge the card on hover */
+    transform: translate3d(0, -.125rem, 0); /* Move the image upwards slightly */
+
+    /* transform: scale(1.05);  */
+    border-radius: 25px;
+    background-color: var(--dark-grey);
+    transition: .3s;
+    /* padding: 12px; */
+}
+
+.playlist-card img{
+    height: 96px;
+    width: 96px;
+    margin-bottom: 15px;
+    border-radius: 10px;
+
+}

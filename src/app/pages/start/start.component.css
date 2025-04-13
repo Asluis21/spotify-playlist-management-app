@@ -1,0 +1,35 @@
+.icon img{
+    height: 50px;
+    width: 50px;
+}
+
+/* .container-fluid{
+    background-color: #191414;
+} */
+
+.container-items{
+    /* background-color: #b3b3b3; */
+    background-color: var(--dark-grey);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* background-color: cornflowerblue; */
+}
+
+.btn-log-in{
+    background-color: var(--green);
+    color: #fff;
+    width: 50%;
+    border-radius: 50px;
+    font-family: sans-serif;
+    padding: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 576px) { 
+    .btn-log-in{
+        width: 100%;   
+    }
+}

@@ -1,0 +1,30 @@
+.search-section {
+    overflow-y: auto;
+    max-height: 100%;
+    overflow-x: hidden;
+}
+
+
+.nav-tabs{
+    border: none;
+}
+
+.nav-link {
+    border-radius: 25px;
+    color: white;
+}
+
+.nav-link.active-link {
+    isolation: isolate;
+    border-color: var(--bs-nav-tabs-link-hover-border-color);
+}
+
+.search-bar{
+    border-radius: 25px;
+    background: var(--dark-grey);
+    color: white;
+    border: none;
+}
+
+
+

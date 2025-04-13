@@ -1,0 +1,9 @@
+<owl-carousel-o  [options]="customOptions">
+    @for (p of playlists; track $index) {
+        
+        <ng-template carouselSlide>
+            <app-playlist-card [playlist]="p"></app-playlist-card>
+        </ng-template>
+    }
+    
+</owl-carousel-o>

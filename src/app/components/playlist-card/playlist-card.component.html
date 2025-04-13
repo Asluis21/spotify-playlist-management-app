@@ -1,0 +1,10 @@
+<button (click)="searchPlaylist(playlist.id)" class="playlist-card">
+    <div class="playlist-card-image d-flex justify-content-center">
+        <img src="{{playlist.images[0]?.url}}" alt="">
+    </div>
+
+    <div class="playlist-card-content">
+        <h6 class="playlist-name" title="{{playlist.name}}">{{playlist.name}}</h6>
+        <p class="playlist-owner" title="{{playlist.owner.name}}">{{playlist.owner.name}}</p>
+    </div>                            
+</button>

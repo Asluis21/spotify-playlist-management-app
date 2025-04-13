@@ -1,0 +1,36 @@
+<div class="track-search-image">
+    <img src="{{track.images[track.images.length - 1]?.url}}" alt="track image">
+</div>
+
+<div class="track-details w-100 d-flex justify-content-between">
+    <div class="d-flex track-details-name-artist">
+        <div class="d-flex flex-column">
+            <h6 class="track-text track-name" title="{{track.name}}"><strong>{{track.name}}</strong></h6>
+            <p class=" track-text track-artist" title="{{track.artist}}">{{track.artist}}</p>    
+        </div>
+
+        <div class="d-none d-sm-block">
+            <p class="track-text" title="{{track.album}}">{{track.album}}</p>
+        </div>
+
+    </div>
+    
+    <div class="d-flex align-items-center gap-2">
+        <p class="track-text d-none d-sm-block" title="{{track.duration}}">{{track.duration}}</p>
+        
+        @if(followed){
+            <button class="btn btn-red" (click)="removeTrack(track.id)">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-dash" viewBox="0 0 16 16">
+                    <path d="M4 8a.5.5 0 0 1 .5-.5h7a.5.5 0 0 1 0 1h-7A.5.5 0 0 1 4 8"/>
+                </svg>
+            </button>
+        }@else{
+            <a class="btn btn-green" routerLink="/home/playlist/add/{{track.id}}">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-plus-lg" viewBox="0 0 16 16">
+                    <path fill-rule="evenodd" d="M8 2a.5.5 0 0 1 .5.5v5h5a.5.5 0 0 1 0 1h-5v5a.5.5 0 0 1-1 0v-5h-5a.5.5 0 0 1 0-1h5v-5A.5.5 0 0 1 8 2"/>
+                </svg>
+            </a>
+        }
+
+    </div>
+</div>
