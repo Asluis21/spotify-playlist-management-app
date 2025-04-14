@@ -2,7 +2,6 @@
     width: 100%;
     font-size: 13px;
     border-radius: 20%;
-    /* align-items: center; */
     padding: 5px;
 }
 
@@ -16,11 +15,8 @@
 }
 
 .track-details-name-artist{
-    /* justify-content: space-between; */
     width: 60%;
     gap: 30%;
-    /* min-width: 165px;
-    max-width: 165px; */
 }
 
 .track-search:hover {

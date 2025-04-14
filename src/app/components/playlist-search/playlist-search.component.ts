@@ -26,8 +26,7 @@ export class PlaylistSearchComponent implements OnChanges, OnInit{
   ngOnInit(){
     this.route.params.subscribe(params => {
       const playlistsName = params['searchPlaylist'];
-      console.log(params['searchPlaylist']);
-      
+
       if(playlistsName){
         this.searchPlaylist = playlistsName;
         this.showPlaylists();
@@ -39,7 +38,6 @@ export class PlaylistSearchComponent implements OnChanges, OnInit{
 
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['searchPlaylist']){
-      console.log("Changes"); 
       this.showPlaylists();
     }
   }
@@ -50,8 +48,6 @@ export class PlaylistSearchComponent implements OnChanges, OnInit{
       this.spotifyService.searchPlaylist(this.searchPlaylist)
         .subscribe(res => {
           this.playlists = res;
-          console.log(res);
-          
         }
       );
   

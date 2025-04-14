@@ -1,20 +1,15 @@
 import { NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { Router, RouterLink, RouterOutlet } from '@angular/router';
-import { SpotifyService } from '../../services/spotify.service';
 import { FormsModule } from '@angular/forms';
 import { Playlist } from '../../models/playlist';
 import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
-import { PlaylistCarouselComponent } from "../../components/playlist-carousel/playlist-carousel.component";
-import { PlaylistSearchComponent } from '../../components/playlist-search/playlist-search.component';
-import { TrackSearchComponent } from '../../components/track-search/track-search.component';
-
 
 
 @Component({
   selector: 'app-search-section',
   standalone: true,
-  imports: [RouterLink, NgClass, FormsModule, CarouselModule, PlaylistCarouselComponent, PlaylistSearchComponent, TrackSearchComponent, RouterOutlet],
+  imports: [RouterLink, NgClass, FormsModule, CarouselModule, RouterOutlet],
   templateUrl: './search-section.component.html',
   styleUrl: './search-section.component.css'
 })
@@ -55,7 +50,6 @@ export class SearchSectionComponent{
   };
 
   constructor(
-    private spotifyService:SpotifyService,
     private router:Router
   ){
 
@@ -78,38 +72,14 @@ export class SearchSectionComponent{
       this.isSearching = false;
       return;
     }
-    
-    // this.isSearching = true;
-    console.log("this.searchBar", this.searchBar);
-    
 
     if (this.activeTab === 'track') {
       this.router.navigate(['/home/search/track', trimmedSearchBar]);
 
-      // this.spotifyService.searchTracks(trimmedSearchBar).subscribe({
-      //   next:(tracks) => {
-      //       this.tracks = tracks;
-      //       console.log('Tracks:', tracks);
-      //   },
-      //   error:(error)=>{
-      //     console.error('Error fetching tracks:', error);
-      //   }
-      // });
     } else if (this.activeTab === 'playlist') {
       
       this.router.navigate(['/home/search/playlist', trimmedSearchBar]);
-      
-      // this.spotifyService.searchPlaylist(trimmedSearchBar).subscribe({
-
-      //   next:(playlists) => {
-      //     this.playlists = playlists;
-      //     console.log('Playlists:', playlists);
-      //   },
-      //   error:(error) => {
-      //     console.error('Error fetching playlists:', error);
-      //   }
-      
-      // });
+    
     }
   }
 

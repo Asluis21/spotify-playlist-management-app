@@ -36,7 +36,6 @@
             
         </div>
 
-        <!-- <div class="d-flex flex-column gap-2 align-items-center" (click)="toggleCollapse()"> -->
         <div class="d-flex flex-column gap-2 align-items-center">
             
             <div class="edit-img">
@@ -70,10 +69,6 @@
         @if (playlist?.tracks) {
             @for (t of playlist.tracks; track t) {
                 <li>
-                    <!-- <app-playlist-track-item-component
-                        class="track-detail list-group-item d-flex gap-3 rounded-4" 
-                        [item]=t>            
-                    </app-playlist-track-item-component> -->
                     <app-track-detail
                         class="track-detail list-group-item d-flex gap-3 rounded-4" 
                         [track]=t

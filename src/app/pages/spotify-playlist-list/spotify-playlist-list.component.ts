@@ -1,7 +1,6 @@
 import { Component, HostListener } from '@angular/core';
 import { Playlist } from '../../models/playlist';
 import { SpotifyService } from '../../services/spotify.service';
-import { response } from 'express';
 import { Track } from '../../models/track';
 import { Router, RouterLink } from '@angular/router';
 import { Location } from '@angular/common';
@@ -26,8 +25,6 @@ export class SpotifyPlaylistListComponent {
   
   isCollapse: boolean = false;
   
-
-  // currentPlaylistTittle = "";
   isPlaylistSelected: boolean = false;
 
   constructor(
@@ -41,61 +38,23 @@ export class SpotifyPlaylistListComponent {
   }
 
   ngOnInit(){
-
-    this.checkScreenSize();
     this.getPlaylists();
-
-    
   }
 
   getPlaylists(){
 
-
-
     this.spotifyService.getPlaylists().subscribe(res =>{
       this.playlists = res;
-      console.log("Spotify playlist:", res);
       }
     )
-
-  }
-
-  @HostListener('window:resize', [])
-  onResize(){
-    this.checkScreenSize();
-  }
-
-  checkScreenSize(){
-    if (typeof window !== 'undefined') {
-      this.isMobile = window.innerWidth <= 575;
-    }
-  }
-
-  toggleCollapse(){
-    if(this.isMobile){
-      this.isCollapse = true;
-      console.log(this.isCollapse);
-      
-      const element = document.getElementById("collapsPlaylistSpotify");
-      if(element){
-        element.classList.toggle("show");
-        this.isCollapse =false
-      }
-    }
   }
 
   getBackToPlaylists(){
-
     this.isPlaylistSelected = false;
-    // this.currentPlaylistTittle = "";
-    // this.getPlaylists();
   }
 
   selectedItem(idPlaylist : string){
-   
-
     this.router.navigate(["home/playlist/tracks", idPlaylist]);
-
   }
 
 }

@@ -3,7 +3,6 @@ import { CarouselModule, OwlOptions } from 'ngx-owl-carousel-o';
 import { Playlist } from '../../models/playlist';
 import { SpotifyService } from '../../services/spotify.service';
 import { PlaylistCardComponent } from '../playlist-card/playlist-card.component';
-import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-playlist-carousel',
@@ -19,7 +18,6 @@ export class PlaylistCarouselComponent implements OnInit {
 
   constructor(
     private spotifyService : SpotifyService,
-    private sanitizer: DomSanitizer
   ) {
     
     
@@ -81,8 +79,4 @@ export class PlaylistCarouselComponent implements OnInit {
     }
   };
 
-  // Helper method to sanitize HTML
-  sanitizeHtml(html: string): SafeHtml {
-    return this.sanitizer.bypassSecurityTrustHtml(html);
-  };
 }

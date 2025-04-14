@@ -1,21 +1,15 @@
 .icon img{
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
 }
 
-/* .container-fluid{
-    background-color: #191414;
-} */
-
 .container-items{
-    /* background-color: #b3b3b3; */
     background-color: var(--dark-grey);
     border-radius: 10px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    /* background-color: cornflowerblue; */
 }
 
 .btn-log-in{

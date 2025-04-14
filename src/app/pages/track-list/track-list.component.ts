@@ -74,12 +74,9 @@ export class TrackListComponent implements OnInit{
     
     this.spotifyService.followPlaylist(this.playlist.id).subscribe({
       next: res => {
-        console.log("FOLLOW PLAYLIST");
-        console.log("res: ", res);
         this.isFollowing = true;
       },
       error: err => {
-        console.log("err: ", err);
       }
     }); 
   }
@@ -87,18 +84,10 @@ export class TrackListComponent implements OnInit{
   unfollowPlaylist(){
     this.spotifyService.unfollowPlaylist(this.playlist.id).subscribe({
       next: res => {
-        console.log("UNFOLLOW PLAYLIST");
-        console.log("res: ", res);
         this.isFollowing = false;
-
         if(this.isOwner){
           this.router.navigate(['/home/playlist/myPlaylists']);
         }
-
-      },
-
-      error: err => {
-        console.log("err: ", err);
       }
     })
   }

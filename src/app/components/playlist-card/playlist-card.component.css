@@ -1,6 +1,5 @@
 .playlist-card{
     padding-top: 15px;
-    /* padding-bottom: 18px; */
     border-radius: 10px;
     width: 120px;
     height: 210px;
@@ -9,7 +8,6 @@
     background-color: inherit;
     display: flex;
     flex-direction: column;
-    /* justify-content: center; */
     align-items: center;
     transition: transform 0.3s ease;
 
@@ -32,19 +30,15 @@
     -webkit-box-orient: vertical;
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 100%; /* Adjust as needed */
+    max-width: 100%; 
     margin: 0;
 }
 
 .playlist-card:hover {
-    /* Slightly enlarge the card on hover */
-    transform: translate3d(0, -.125rem, 0); /* Move the image upwards slightly */
-
-    /* transform: scale(1.05);  */
+    transform: translate3d(0, -.125rem, 0);
     border-radius: 25px;
     background-color: var(--dark-grey);
     transition: .3s;
-    /* padding: 12px; */
 }
 
 .playlist-card img{

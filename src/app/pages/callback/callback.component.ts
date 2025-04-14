@@ -19,8 +19,7 @@ export class CallbackComponent implements OnInit{
 
   ngOnInit() {
     const token = this.spotifyService.getAccessTokenFromURL();
-    // console.log("token: " + token);
-    
+
     if (!!token) {
       this.spotifyService.defineToken(token, 3600);
       this.router.navigate(['/home']);

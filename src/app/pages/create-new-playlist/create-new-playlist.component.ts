@@ -38,19 +38,14 @@ export class CreateNewPlaylistComponent implements OnInit{
           next: (playlist) => {
             this.playlist = playlist;
             
-            console.log(playlist);
             this.playlistForm.patchValue({
               name: playlist.name,
               description: playlist.description,
               isPublic: playlist.public,
             });
-          },
-          error: (err) => {
-            console.log('Error getting playlist:', err);
           }
         });
       }
-        console.log('Editing playlist:', playlistId);
     });
 
     this.playlistForm = this.fb.group({
@@ -66,28 +61,13 @@ export class CreateNewPlaylistComponent implements OnInit{
 
 
       if(this.playlist){
-        this.spotifyService.editPlaylist(this.playlist.id, name, description, isPublic)
-          .subscribe({
-            next: (playlist) => {// JUST ADDED
-              console.log("form", this.playlistForm.value);
-              
-              console.log('Playlist edited:', playlist);
-              // this.router.navigate(['/home/playlist']);
-            },
-            error: (err) => {
-              console.log('Error editing playlist:', err);
-            }
-          })
+        this.spotifyService.editPlaylist(this.playlist.id, name, description, isPublic).subscribe();
       }else{
         this.spotifyService.getUserProfile().subscribe(user => {
           this.spotifyService.createPlaylist(user.id, name, description, isPublic)
           .subscribe({
             next: (playlist) => {
-              console.log('Playlist created:', playlist);
               this.router.navigate(['/home']);
-            },
-            error: (err) => {
-              console.log('Error creating playlist:', err);
             }
           });
         });

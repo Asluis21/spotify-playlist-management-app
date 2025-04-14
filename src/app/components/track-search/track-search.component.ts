@@ -13,8 +13,6 @@ import { TrackDetailComponent } from '../track-detail/track-detail.component';
 })
 export class TrackSearchComponent implements OnInit, OnChanges {
 
-  // @Input({required:true}) track!: String;
-
   searchTrack: String = '';
   tracks: Track[] = []
 
@@ -25,16 +23,12 @@ export class TrackSearchComponent implements OnInit, OnChanges {
   ){}
   ngOnChanges(changes: SimpleChanges): void {
     if(changes['track']){
-      console.log("Changes");
       this.showTracks();
-      
     }
   }
 
   showTracks(){
     if(this.searchTrack.trim() != '') {
-      console.log(this.searchTrack);
-  
       this.spotifyService.searchTracks(this.searchTrack)
         .subscribe(res => {
           this.tracks = res;
@@ -47,7 +41,6 @@ export class TrackSearchComponent implements OnInit, OnChanges {
   ngOnInit(): void {
     this.route.params.subscribe(params => {
       const trackName = params['searchTracks'];
-      console.log(params['searchTracks']);
       
       if(trackName){
         this.searchTrack = trackName;
@@ -60,7 +53,6 @@ export class TrackSearchComponent implements OnInit, OnChanges {
 
 
   addTrack(id_track:String){
-    console.log(id_track);
-    
+    console.log(id_track);    
   }
 }

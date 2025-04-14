@@ -2,9 +2,7 @@ import { Component } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Location } from '@angular/common';
-import { throwError } from 'rxjs';
 import { SpotifyProfile } from '../../models/spotify-profile';
-import { resolve } from 'path';
 import { Playlist } from '../../models/playlist';
 import { Track } from '../../models/track';
 import { PlaylistDetailComponent } from '../../components/playlist-detail/playlist-detail.component';
@@ -39,9 +37,7 @@ export class AddTrackPanelComponent {
 
       this.spotifyService.getTrackById(this.trackUri).subscribe(
         res => {
-          this.track = res;
-          console.log("Track:", res);
-          
+          this.track = res;          
         }
       )
 
@@ -90,17 +86,10 @@ export class AddTrackPanelComponent {
 
   addTrackToSelectedPlaylists(): void {
 
-    console.log(this.selectedPlaylists);
-    
-
     this.newSelectedPlaylists.forEach((playlistId) => {
       this.spotifyService.addTrackToPlaylist(playlistId, this.trackUri).subscribe({
         next:() => {
-          console.log(`Track added to playlist ${playlistId}`);
           this.router.navigate(['/home/playlist']);
-        },
-        error:(error) => {
-          console.log(`Error adding track to playlist ${playlistId}:`, error);
         }
       });
     });

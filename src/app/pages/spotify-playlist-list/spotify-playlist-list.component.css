@@ -25,13 +25,11 @@
 
 .custom-button:hover{
     background: var(--dark-grey);
-    /* opacity: 1; */
     transition: .3s;
 }
 
 .custom-button-trash:hover{
     background: #b60000;
-    /* opacity: 1; */
     transition: .3s;
 }
 
@@ -39,14 +37,3 @@
     background-color: var(--green);
     border-radius: 50px;
 }
-
-/* .container-spotify-items{
-    flex: 1; 
-    height: 100%
-}
-
-
-.list-playlists{
-    flex-grow: 1; 
-    overflow-y: auto;
-} */

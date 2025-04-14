@@ -68,12 +68,17 @@ export class SpotifyService {
     // }
     // return null;
 
-    const token = localStorage.getItem('spotifyToken');
-    const expiry = localStorage.getItem('spotifyTokenExpiry');
-    if (token && expiry && Date.now() < parseInt(expiry, 10)) {
-      return token;
+    if (typeof window !== 'undefined') {
+      const token = localStorage.getItem('spotifyToken');
+      const expiry = localStorage.getItem('spotifyTokenExpiry');
+      if (token && expiry && Date.now() < parseInt(expiry, 10)) {
+        return token;
+      }
+      return null;
     }
     return null;
+
+    
   }
 
   getUserProfile() {

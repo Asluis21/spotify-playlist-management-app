@@ -1,5 +1,5 @@
 {
-  "name": "transfer-playlist-app",
+  "name": "playlist-managment-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:transfer-playlist-app": "node dist/transfer-playlist-app/server/server.mjs"
+    "serve:ssr:playlist-managment-app": "node dist/playlist-managment-app/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -30,7 +30,7 @@
     "popper.js": "^1.16.1",
     "rxjs": "~7.8.0",
     "spotify-web-api-js": "^1.5.2",
-    "transfer-playlist-app": "file:",
+    "playlist-managment-app": "file:",
     "tslib": "^2.3.0",
     "xmlhttprequest": "^1.8.0",
     "zone.js": "~0.14.3"
