@@ -1,6 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Playlist } from '../../models/playlist';
-import { Router, RouterLink } from '@angular/router';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-playlist-card',

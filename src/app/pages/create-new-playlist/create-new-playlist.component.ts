@@ -66,7 +66,7 @@ export class CreateNewPlaylistComponent implements OnInit{
         this.spotifyService.getUserProfile().subscribe(user => {
           this.spotifyService.createPlaylist(user.id, name, description, isPublic)
           .subscribe({
-            next: (playlist) => {
+            next: () => {
               this.router.navigate(['/home']);
             }
           });

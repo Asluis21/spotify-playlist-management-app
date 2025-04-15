@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { SpotifyService } from '../../services/spotify.service';
 import { Playlist } from '../../models/playlist';
 import { PlaylistCardComponent } from '../playlist-card/playlist-card.component';

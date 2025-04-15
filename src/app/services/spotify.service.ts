@@ -1,8 +1,7 @@
-import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Router } from '@angular/router';
-import { catchError, filter, firstValueFrom, map, throwError } from 'rxjs';
-import Spotify from 'spotify-web-api-js';
+import { catchError, firstValueFrom, map, throwError } from 'rxjs';
 import { Playlist } from '../models/playlist';
 import { SpotifyProfile } from '../models/spotify-profile';
 import { Track } from '../models/track';
@@ -17,15 +16,12 @@ export class SpotifyService {
   private client_id = environment.spotifyClientId;
   private redirect_uri = environment.spotifyRedirectUri;
   private apiUrl = environment.spotifyApiBaseUrl;
-
-  spotifyApi: Spotify.SpotifyWebApiJs;
   
   constructor(
     private http: HttpClient, 
     private router: Router, 
     private loggingService: LoggingService
   ) { 
-    this.spotifyApi = new Spotify();
   }
 
   generateRandomString(length: number) {
@@ -281,7 +277,6 @@ export class SpotifyService {
   }
 
   defineToken(token: string, expiresIn:number){
-    this.spotifyApi.setAccessToken(token);
     if (token) {
       localStorage.setItem('spotifyToken', token);
       localStorage.setItem('spotifyTokenExpiry', (Date.now() + expiresIn * 1000).toString());

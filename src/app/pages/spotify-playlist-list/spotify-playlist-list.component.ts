@@ -1,4 +1,4 @@
-import { Component, HostListener } from '@angular/core';
+import { Component } from '@angular/core';
 import { Playlist } from '../../models/playlist';
 import { SpotifyService } from '../../services/spotify.service';
 import { Track } from '../../models/track';

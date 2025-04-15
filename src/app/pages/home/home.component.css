@@ -12,18 +12,6 @@
     max-height: 100%;
 }
 
-/* 
-.item-playlist{
-    flex: 1;
-} */
-
-/* 
-@media (min-width: 575px) {
-    .item-playlist{
-        max-height: 100%;
-    }
-} */
-
 /* scroll */
 .scrollable-text{
     overflow: auto;

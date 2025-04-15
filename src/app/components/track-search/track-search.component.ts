@@ -1,4 +1,4 @@
-import { Component, Input, OnChanges, OnInit, SimpleChanges } from '@angular/core';
+import { Component, OnChanges, OnInit, SimpleChanges } from '@angular/core';
 import { Track } from '../../models/track';
 import { SpotifyService } from '../../services/spotify.service';
 import { ActivatedRoute } from '@angular/router';
