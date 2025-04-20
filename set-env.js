@@ -1,5 +1,5 @@
 const fs = require('fs');
-const envPath = './src/environments/environment.prod.ts';
+const envPath = './src/environments/environment.ts';
 
 let content = fs.readFileSync(envPath, 'utf8');
 content = content.replace('${SPOTIFY_CLIENT_ID}', process.env.SPOTIFY_CLIENT_ID);
