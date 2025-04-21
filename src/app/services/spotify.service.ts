@@ -53,8 +53,6 @@ export class SpotifyService {
     ].join(' '); // Join scopes with a space
 
     const authUrl = `${environment.spotifyAuthBaseUrl}?response_type=token&client_id=${this.client_id}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(this.redirect_uri)}&state=${state}`;
-    console.log(authUrl);
-    alert('ga')
 
     window.location.href = authUrl;
   }
