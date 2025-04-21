@@ -18,8 +18,7 @@ export class SpotifyService {
   private apiUrl = environment.spotifyApiBaseUrl;
   
   constructor(
-    private http: HttpClient, 
-    private router: Router, 
+    private http: HttpClient,
     private loggingService: LoggingService
   ) { 
   }
@@ -54,16 +53,13 @@ export class SpotifyService {
     ].join(' '); // Join scopes with a space
 
     const authUrl = `${environment.spotifyAuthBaseUrl}?response_type=token&client_id=${this.client_id}&scope=${encodeURIComponent(scope)}&redirect_uri=${encodeURIComponent(this.redirect_uri)}&state=${state}`;
-  
+    console.log(authUrl);
+    alert('ga')
+
     window.location.href = authUrl;
   }
   
   getSpotifyToken() {
-    // if (typeof window !== 'undefined') {
-    //   return window.localStorage.getItem('spotifyToken') || null;
-    // }
-    // return null;
-
     if (typeof window !== 'undefined') {
       const token = localStorage.getItem('spotifyToken');
       const expiry = localStorage.getItem('spotifyTokenExpiry');
