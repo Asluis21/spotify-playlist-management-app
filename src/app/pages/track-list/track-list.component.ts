@@ -38,7 +38,6 @@ export class TrackListComponent implements OnInit{
           this.loadPlaylist(playlistId);
           this.spotifyService.verifyFollowedPlaylist(playlistId).then(
             res => {
-              console.log("res: " + res);
               this.isFollowing = res;
             }
           );
@@ -62,8 +61,6 @@ export class TrackListComponent implements OnInit{
   loadPlaylist(playlistId:string):void{
     this.spotifyService.getPlaylistById(playlistId).subscribe(
       playlistFound => {
-        console.log("Playlist Found: ", playlistFound);
-        
         this.playlist = playlistFound;
         this.isOwner = this.playlist?.owner?.id === this.currentUser?.id;
       }

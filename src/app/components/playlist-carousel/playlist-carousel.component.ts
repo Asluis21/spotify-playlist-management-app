@@ -37,8 +37,6 @@ export class PlaylistCarouselComponent implements OnInit {
       )
     }
 
-    console.log(this.playlists);
-
   }
 
   customOptions: OwlOptions = {

@@ -49,10 +49,4 @@ export class TrackSearchComponent implements OnInit, OnChanges {
 
     });
   }
-
-
-
-  addTrack(id_track:String){
-    console.log(id_track);    
-  }
 }

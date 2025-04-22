@@ -97,11 +97,8 @@ export class CreateNewPlaylistComponent implements OnInit{
         const base64Image = (reader.result as string).split(',')[1]; // Remove the data URL prefix
         this.spotifyService.changePlaylistCoverImage(this.playlist.id, base64Image).subscribe({
           next: () => {
-            console.log('Playlist cover image updated successfully');
-          },
-          error: (err) => {
-            console.log('Error updating playlist cover image:', err);
-          },
+            this.location.back();
+          }
         });
       };
       reader.readAsDataURL(this.selectedImage);
