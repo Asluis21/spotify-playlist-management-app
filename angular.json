@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "playlist-managment-app": {
+    "spotify-playlist-management-app": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/playlist-managment-app",
+            "outputPath": "dist/spotify-playlist-management-app",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -78,10 +78,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "playlist-managment-app:build:production"
+              "buildTarget": "spotify-playlist-management-app:build:production"
             },
             "development": {
-              "buildTarget": "playlist-managment-app:build:development"
+              "buildTarget": "spotify-playlist-management-app:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -89,7 +89,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "playlist-managment-app:build"
+            "buildTarget": "spotify-playlist-management-app:build"
           }
         },
         "test": {

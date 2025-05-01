@@ -1,5 +1,5 @@
 {
-  "name": "playlist-managment-app",
+  "name": "spotify-playlist-management-app",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -8,7 +8,7 @@
     "build": "ng build --configuration=production",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:playlist-managment-app": "node dist/playlist-managment-app/server/server.mjs"
+    "serve:ssr:spotify-playlist-management-app": "node dist/spotify-playlist-management-app/server/server.mjs"
   },
   "private": true,
   "dependencies": {
@@ -27,8 +27,8 @@
     "express": "^4.18.2",
     "jquery": "^3.7.1",
     "ngx-owl-carousel-o": "^17.0.0",
-    "playlist-managment-app": "file:",
     "rxjs": "~7.8.0",
+    "spotify-playlist-management-app": "file:",
     "tslib": "^2.3.0",
     "zone.js": "~0.14.3"
   },

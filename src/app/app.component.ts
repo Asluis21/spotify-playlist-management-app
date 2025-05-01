@@ -9,7 +9,7 @@ import { RouterOutlet } from '@angular/router';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
-  title = 'transfer-playlist-app';
+  title = 'spotify-playlist-management-app';
 
   constructor(){}
 }
